@@ -11,16 +11,15 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guesses, setGuesses] = React.useState([{ id: Math.random(), label: '' }])
+  const [guesses, setGuesses] = React.useState([])
   console.log(guesses)
 
   function handleNewGuess(newGuess) {
-    const nextGuessesList =
-      [...guesses, {
-        id: Math.random(),
-        label: newGuess,
-      }]
-    setGuesses(nextGuessesList)
+    const nextGuess = {
+      id: Math.random(),
+      value: newGuess,
+    }
+    setGuesses([...guesses, nextGuess])
   }
 
   return <>
