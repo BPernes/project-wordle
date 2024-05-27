@@ -1,0 +1,7 @@
+.guess:valid {
+	background-color: palegreen;
+}
+
+.guess:invalid {
+	background-color: lightpink;
+}
