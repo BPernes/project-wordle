@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './GuessInput.module.css'
 
 function GuessInput({ handleNewGuess }) {
-  const [guess, setGuess] = React.useState('')
+  const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleChange(e) {
     const capitalizedGuess = (e.target.value).toUpperCase()
-    setGuess(capitalizedGuess)
+    setTentativeGuess(capitalizedGuess)
   }
 
   return (
@@ -14,9 +14,9 @@ function GuessInput({ handleNewGuess }) {
       className="guess-input-wrapper"
       onSubmit={(e) => {
         e.preventDefault()
-        console.info({ guess })
-        handleNewGuess(guess)
-        setGuess('')
+        console.info({ tentativeGuess })
+        handleNewGuess(tentativeGuess)
+        setTentativeGuess('')
       }}
     >
       <label htmlFor="guess-input">Enter guess:</label>
@@ -29,7 +29,7 @@ function GuessInput({ handleNewGuess }) {
         title='The input must have 5 letters'
         id="guess-input"
         type="text"
-        value={guess}
+        value={tentativeGuess}
         onChange={(e) => { handleChange(e) }}
       />
     </form>
