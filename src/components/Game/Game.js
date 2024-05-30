@@ -12,7 +12,6 @@ console.info({ answer });
 
 function Game() {
   const [guesses, setGuesses] = React.useState([])
-  console.log(guesses)
 
   function handleNewGuess(newGuess) {
     const nextGuess = {
