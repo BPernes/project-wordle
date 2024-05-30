@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './GuessInput.module.css'
 
-function GuessInput({ handleNewGuess }) {
+function GuessInput({ handleSubmitGuess }) {
   const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleChange(e) {
@@ -15,7 +15,7 @@ function GuessInput({ handleNewGuess }) {
       onSubmit={(e) => {
         e.preventDefault()
         console.info({ tentativeGuess })
-        handleNewGuess(tentativeGuess)
+        handleSubmitGuess(tentativeGuess)
         setTentativeGuess('')
       }}
     >
