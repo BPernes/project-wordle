@@ -1,7 +1,6 @@
 import React from 'react';
-import styles from './GuessInput.module.css'
 
-function GuessInput({ handleSubmitGuess }) {
+function GuessInput({ handleSubmitGuess, gameStatus }) {
   const [tentativeGuess, setTentativeGuess] = React.useState('')
 
   function handleChange(e) {
@@ -22,7 +21,7 @@ function GuessInput({ handleSubmitGuess }) {
       <label htmlFor="guess-input">Enter guess:</label>
       <input
         required
-        className={styles.guess}
+        disabled={gameStatus !== "running"}
         pattern='\w{5}'
         minLength='5'
         maxLength='5'
